@@ -1,0 +1,14 @@
+{
+    "interactions": [
+        {
+            "object1": "Axe",
+            "object2": "Tree",
+            "method": "cut"
+        },
+        {
+            "object1": "WaterCan",
+            "object2": "Water",
+            "method": "fill"
+        }
+    ]
+}
