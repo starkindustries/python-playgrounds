@@ -1,0 +1,96 @@
+{
+    "time": "2023-01-20 11:04:39,081",
+    "process_id": "72063", 
+    "filename": "main.py",
+    "line_number": "9",
+    "debug_level": "DEBUG",
+    "message": "HELLO WORLD",
+}
+{
+    "time": "2023-01-20 11:04:39,081",
+    "process_id": "72063", 
+    "filename": "main.py",
+    "line_number": "10",
+    "debug_level": "INFO",
+    "message": "THIS IS AN INFO LOG",
+}
+{
+    "time": "2023-01-20 11:04:54,649",
+    "process_id": "72085", 
+    "filename": "main.py",
+    "line_number": "9",
+    "debug_level": "DEBUG",
+    "message": "HELLO WORLD",
+}
+{
+    "time": "2023-01-20 11:04:54,649",
+    "process_id": "72085", 
+    "filename": "main.py",
+    "line_number": "10",
+    "debug_level": "INFO",
+    "message": "THIS IS AN INFO LOG",
+}
+{
+    "time": "2023-01-20 11:05:03,447",
+    "process_id": "72103", 
+    "filename": "main.py",
+    "line_number": "9",
+    "debug_level": "DEBUG",
+    "message": "HELLO WORLD",
+}
+{
+    "time": "2023-01-20 11:05:03,447",
+    "process_id": "72103", 
+    "filename": "main.py",
+    "line_number": "10",
+    "debug_level": "INFO",
+    "message": "THIS IS AN INFO LOG",
+}
+{
+    "time": "2023-01-25 13:45:34,585",
+    "process_id": "10563", 
+    "filename": "main.py",
+    "line_number": "9",
+    "debug_level": "DEBUG",
+    "message": "HELLO WORLD",
+}
+{
+    "time": "2023-01-25 13:45:34,585",
+    "process_id": "10563", 
+    "filename": "main.py",
+    "line_number": "10",
+    "debug_level": "INFO",
+    "message": "THIS IS AN INFO LOG",
+}
+{
+    "time": "2023-01-25 13:46:56,192",
+    "process_id": "10606", 
+    "filename": "main.py",
+    "line_number": "9",
+    "debug_level": "DEBUG",
+    "message": "HELLO WORLD",
+}
+{
+    "time": "2023-01-25 13:46:56,192",
+    "process_id": "10606", 
+    "filename": "main.py",
+    "line_number": "10",
+    "debug_level": "INFO",
+    "message": "THIS IS AN INFO LOG",
+}
+{
+    "time": "2023-01-25 13:48:19,445",
+    "process_id": "10741", 
+    "filename": "main.py",
+    "line_number": "9",
+    "debug_level": "DEBUG",
+    "message": "HELLO WORLD",
+}
+{
+    "time": "2023-01-25 13:48:19,445",
+    "process_id": "10741", 
+    "filename": "main.py",
+    "line_number": "10",
+    "debug_level": "INFO",
+    "message": "THIS IS AN INFO LOG",
+}
