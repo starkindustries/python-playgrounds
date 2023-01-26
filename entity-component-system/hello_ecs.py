@@ -62,14 +62,17 @@ minerals.position = (0, 0)
 world.add_entity(water)
 world.add_entity(minerals)
 
+# Print the size of the Plant
+print("plant1 size:", plant1.growth.size)  # Output: 0
+
 # Run the growth system
 world.growth_system()
 
 # Print the size of the Plant
-print("plant1:", plant1.growth.size)  # Output: 1
+print("plant1 size:", plant1.growth.size)  # Output: 1
 
 # Run the growth system again
 world.growth_system()
 
 # Print the size of the Plant
-print("plant1:", plant1.growth.size)  # Output: 2
+print("plant1 size:", plant1.growth.size)  # Output: 2
