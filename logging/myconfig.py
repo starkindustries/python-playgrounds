@@ -1,4 +1,4 @@
-# Server Logging Configuration
+# Log Config
 
 # Note on dictConfig() vs fileConfig()
 # https://docs.python.org/3/library/logging.config.html#logging-config-dictschema
@@ -102,7 +102,7 @@ LOGGING_CONFIG = {
             "filename": "server_log.json",
         },
         "queue_listener": {
-            "class": "server_logging_config.QueueListenerHandler",
+            "class": "myconfig.QueueListenerHandler",
             "handlers": [
                 "cfg://handlers.console",
                 "cfg://handlers.file",
