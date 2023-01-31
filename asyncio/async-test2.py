@@ -50,4 +50,4 @@ async def main():
         else:
             print(f"FOUND RESULT: {result}")
 
-print(asyncio.run(main()))
+asyncio.run(main())

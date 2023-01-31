@@ -1,8 +1,8 @@
 import logging
 import logging.config
-import server_logging_config
+import myconfig
 
-logging.config.dictConfig(server_logging_config.LOGGING_CONFIG)
+logging.config.dictConfig(myconfig.LOGGING_CONFIG)
 logger = logging.getLogger("server")
 
 print("main.py online..")
