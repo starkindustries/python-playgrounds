@@ -89,24 +89,10 @@ LOGGING_CONFIG = {
             "level": "DEBUG",
             "stream": "ext://sys.stdout",  # Default is stderr
         },
-        "file": {
-            "class": "logging.FileHandler",
-            "formatter": "standard",
-            "level": "DEBUG",
-            "filename": "server.log",
-        },
-        "jsonfile": {
-            "class": "logging.FileHandler",
-            "formatter": "json",
-            "level": "DEBUG",
-            "filename": "server_log.json",
-        },
         "queue_listener": {
             "class": "myconfig.QueueListenerHandler",
             "handlers": [
                 "cfg://handlers.console",
-                "cfg://handlers.file",
-                "cfg://handlers.jsonfile",
             ],
         },
     },

@@ -1,0 +1,16 @@
+{
+    "time": "2023-01-30 16:56:35,499",
+    "process_id": "48202", 
+    "filename": "main.py",
+    "line_number": "185",
+    "debug_level": "DEBUG",
+    "message": "HELLO CLI_SERVER!!"
+},
+{
+    "time": "2023-01-30 16:56:49,163",
+    "process_id": "48210", 
+    "filename": "main.py",
+    "line_number": "185",
+    "debug_level": "DEBUG",
+    "message": "HELLO CLI_SERVER!!"
+},

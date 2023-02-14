@@ -18,7 +18,7 @@ def print_grass():
             else:
                 row += ". "
         land.append(row)
-    os.system('cls')
+    os.system('clear')
     for row in land:
         print(row)
 

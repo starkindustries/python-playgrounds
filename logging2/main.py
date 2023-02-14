@@ -60,24 +60,102 @@ class QueueListenerHandler(logging.handlers.QueueHandler):
         return super().emit(record)
 
 
+# LOGGING_CONFIG = {
+#     "version": 1,
+#     "handlers": {
+#         "console": {
+#             "class": "logging.StreamHandler",
+#         },
+#         "queue_listener": {
+#             "class": __name__ + ".QueueListenerHandler",
+#             "handlers": [
+#                 "cfg://handlers.console"
+#             ],
+#         },
+#     },
+#     "loggers": {
+#         "server": {
+#             "handlers": ["queue_listener"],
+#             "level": "DEBUG",
+#         },
+#     },
+# }
+
+JSON_FORMAT = """{
+    "time": "%(asctime)s",
+    "process_id": "%(process)s", 
+    "filename": "%(filename)s",
+    "line_number": "%(lineno)d",
+    "debug_level": "%(levelname)s",
+    "message": "%(message)s"
+},"""
+
 LOGGING_CONFIG = {
     "version": 1,
+    "disable_existing_loggers": True,
+    "formatters": {
+        "standard": {
+            "format": "[%(asctime)s] [%(process)s] [%(filename)s:%(lineno)d] %(levelname)s - %(message)s",
+            "datfmt": "%y-%m-%d %H:%M:%S",
+            "validate": True,
+        },
+        "json": {
+            "format": JSON_FORMAT,
+            "datfmt": "%y-%m-%d %H:%M:%S",
+            "validate": True,
+        },
+    },
     "handlers": {
         "console": {
             "class": "logging.StreamHandler",
+            "formatter": "standard",
+            "level": "DEBUG",
+            "stream": "ext://sys.stdout",  # Default is stderr
         },
+        "file": {
+            "class": "logging.FileHandler",
+            "formatter": "standard",
+            "level": "DEBUG",
+            "filename": "server.log",
+        },
+        "jsonfile": {
+            "class": "logging.FileHandler",
+            "formatter": "json",
+            "level": "DEBUG",
+            "filename": "server_log.json",
+        },
+        "file_cliserver": {
+            "class": "logging.FileHandler",
+            "formatter": "standard",
+            "level": "DEBUG",
+            "filename": "cli_server.log",
+        },
+        "jsonfile_cliserver": {
+            "class": "logging.FileHandler",
+            "formatter": "json",
+            "level": "DEBUG",
+            "filename": "cli_server_log.json",
+        },         
         "queue_listener": {
             "class": __name__ + ".QueueListenerHandler",
             "handlers": [
-                "cfg://handlers.console"
+                "cfg://handlers.console",
+                "cfg://handlers.file",
+                "cfg://handlers.jsonfile",
             ],
         },
     },
     "loggers": {
+        "cli_server": {
+            "handlers": ["console", "file_cliserver", "jsonfile_cliserver"],
+            "level": "DEBUG",
+            "propagate": False,
+        },
         "server": {
             "handlers": ["queue_listener"],
             "level": "DEBUG",
-        },
+            "propagate": False,
+        },        
     },
 }
 
@@ -85,7 +163,7 @@ LOGGING_CONFIG = {
 #     print("TESTING LETTER:", letter_to_test)
 #     try:
 #         config_copy = copy.deepcopy(LOGGING_CONFIG)
-#         config_copy["handlers"]["queue_listener"]["handlers"][0] = "cfg://handlers." + letter_to_test
+#         config_copy["handlers"]["queue_listenr"]["handlers"][0] = "cfg://handlers." + letter_to_test
 #         config_copy["handlers"][letter_to_test] = config_copy["handlers"]["console"]
 #         del config_copy["handlers"]["console"]
 
@@ -101,3 +179,7 @@ if __name__ == "__main__":
     logging.config.dictConfig(LOGGING_CONFIG)
     logger = logging.getLogger("server")
     logger.debug("HELLO WORLD")
+
+    #logging.config.dictConfig(LOGGING_CONFIG)
+    logger = logging.getLogger("cli_server")
+    logger.debug("HELLO CLI_SERVER!!")
