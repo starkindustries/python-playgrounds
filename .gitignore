@@ -2,7 +2,9 @@
 # Added by me
 ######################
 doxygen/doxygen/html/
-
+*.o
+*.out
+*.db
 
 ######################
 # MacOS
