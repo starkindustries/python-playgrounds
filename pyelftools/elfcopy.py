@@ -82,6 +82,15 @@ def inspect_elf(file, output):
 
 
 if __name__ == "__main__":
+    # // main.c
+    # // compile with gcc main.c
+    #  
+    # #include <stdio.h>
+    # int main()
+    # {
+    #     printf("Hello world!\n");
+    # }
+
     if len(sys.argv) < 2:
         print("Usage: elfeditor.py <elf file>")
         sys.exit(1)
