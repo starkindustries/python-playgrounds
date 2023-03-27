@@ -3,6 +3,8 @@ import unittest
 import threading
 import urllib.request
 
+# https://stackoverflow.com/a/74480354/2179970
+
 class MockIpifyHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
     """HTTPServer mock request handler"""
 
