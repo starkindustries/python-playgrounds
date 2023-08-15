@@ -6,6 +6,8 @@ doxygen/doxygen/html/
 *.out
 *.db
 *.dat
+credentials.json
+senders.txt
 
 ######################
 # MacOS
