@@ -1,3 +1,7 @@
+# References
+# https://developers.google.com/gmail/api/quickstart/python
+# https://github.com/googleworkspace/python-samples/blob/main/gmail/quickstart/quickstart.py
+
 import os.path
 import pprint
 import re
