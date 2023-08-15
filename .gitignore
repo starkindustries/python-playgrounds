@@ -6,8 +6,11 @@ doxygen/doxygen/html/
 *.out
 *.db
 *.dat
+
+# Gmail API items
 credentials.json
 senders.txt
+token.json
 
 ######################
 # MacOS

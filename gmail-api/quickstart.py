@@ -13,6 +13,11 @@ SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 
 
 def get_emails(service):
+    results_file = "senders.txt"
+    if os.path.exists(results_file):
+        print(f"ERROR: results file `{results_file}` already exists. Delete this file and re-run script.")
+        return
+
     query = "before:2020-01-01"
     page_token = None
     
@@ -40,18 +45,20 @@ def get_emails(service):
                     senders.setdefault(email, 0)
                     senders[email] += 1
         
-        printer = pprint.PrettyPrinter(indent=4)
-        printer.pprint(senders)        
+        # printer = pprint.PrettyPrinter(indent=4)
+        # printer.pprint(senders)
 
         page_token = results.get('nextPageToken')
         if not page_token:
             break
-        print(f"{page_token=}")
+        if len(senders.keys()) > 500:
+            break
+        print(f"{page_token=}, {len(senders.keys())}")
     
     # end while-loop
 
     sorted_senders = (sorted(senders.items(), key=lambda item: item[1]))
-    with open("senders.txt", "w") as senders_file:
+    with open(results_file, "w") as senders_file:
         for key, value in sorted_senders:
             senders_file.write(f"{key}: {value}\n")
 
