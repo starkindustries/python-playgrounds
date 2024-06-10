@@ -6,7 +6,10 @@ doxygen/doxygen/html/
 *.out
 *.db
 *.dat
-venv-coqui/
+
+# text-to-speech items
+venv-coqui/ 
+tts-output/
 
 # Gmail API items
 credentials.json
