@@ -6,6 +6,7 @@ doxygen/doxygen/html/
 *.out
 *.db
 *.dat
+venv-coqui/
 
 # Gmail API items
 credentials.json
